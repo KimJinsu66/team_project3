@@ -15,7 +15,7 @@ public class MyHelloFrame extends JFrame
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         p = new JPanel();
-        this.add(p);
+        this.add(lm);
 
         this.setVisible(true);
     }
