@@ -4,7 +4,7 @@ import java.awt.*;
  * 여기에 MyHelloFrame 클래스 설명을 작성하십시오.
  * 
  * @author (2018315005 유제훈, 201671038 김진수) 
- * @version (버전번호나 날짜)
+ * @version (2019.11.11)
  */
 public class MyHelloFrame extends JFrame
 {
