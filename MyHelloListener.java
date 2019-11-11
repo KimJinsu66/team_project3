@@ -3,18 +3,22 @@ import java.awt.event.*;
 import javax.swing.event.*;
 import java.awt.*;
 /**
- * listener event 
+ * Jpanel과 KeyListener,MouseListener을 사용하는 MyHelloListener 클래스  
  *
  * @author (2014671038 김진수, 2018315005 유제훈 )
  * @version (2019.11.11)
  */
-public class MyHelloListener extends MouseAdapter implements KeyListener 
+public class MyHelloListener extends JPanel implements KeyListener,MouseListener
 {
-    public JLabel lm;
-    int FLYING_UNIT = 10;
-    public MyHelloListener(JPanel jp ,JLabel lm){
-        this.lm = lm;
-        
+    private JLabel lm ;
+    public final int FLYING_UNIT = 10;
+    
+    public MyHelloListener(){
+        lm = new JLabel("Hello");
+        this.add(lm);
+        this.addKeyListener(this);
+        this.addMouseListener(this);
+        this.setFocusable(true);
     }
     
     public void mouseClicked(MouseEvent e){
@@ -24,6 +28,11 @@ public class MyHelloListener extends MouseAdapter implements KeyListener
         lm.setLocation(x,y);
         
     }
+    public void mouseEntered(MouseEvent e){}
+    public void mouseExited(MouseEvent e){}
+    public void mousePressed(MouseEvent e){}
+    public void mouseReleased(MouseEvent e){}
+    
     public void keyPressed(KeyEvent e){
         int keyCode = e.getKeyCode();
         
@@ -31,7 +40,7 @@ public class MyHelloListener extends MouseAdapter implements KeyListener
             case KeyEvent.VK_UP:
                 lm.setLocation(lm.getX(),lm.getY() -FLYING_UNIT); break;
             case KeyEvent.VK_DOWN:
-                lm.setLocation(lm.getX(),lm.getY() -FLYING_UNIT); break;
+                lm.setLocation(lm.getX(),lm.getY() +FLYING_UNIT); break;
             case KeyEvent.VK_LEFT:
                 lm.setLocation(lm.getX() - FLYING_UNIT ,lm.getY()); break;
             case KeyEvent.VK_RIGHT:

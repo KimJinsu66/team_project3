@@ -8,6 +8,6 @@
 public class MyHelloApp
 {
     public static void main(String[] args){
-        new MyHelloFrame();
+        MyHelloFrame mf = new MyHelloFrame();
 }
 }
